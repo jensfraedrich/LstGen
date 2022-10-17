@@ -146,7 +146,7 @@ class PythonGenerator(BaseGenerator):
             elif isinstance(part, ElseStmt):
                 self._write_else(part)
             elif isinstance(part, ThenStmt):
-                # avoid empty if-statement body
+                # avoid empty statement body
                 if part and part.body:
                     self._write_stmt_body(part)
                 else:
