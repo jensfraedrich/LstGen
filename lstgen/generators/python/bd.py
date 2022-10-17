@@ -3,6 +3,7 @@ import decimal
 class BigDecimal(decimal.Decimal):
     """ Compatibility class for decimal.Decimal """
 
+    ROUND = decimal.ROUND_HALF_UP
     ROUND_DOWN = decimal.ROUND_DOWN
     ROUND_UP = decimal.ROUND_UP
 
