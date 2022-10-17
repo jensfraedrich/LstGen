@@ -1,5 +1,11 @@
 # Changes
 
+## 0.6.0
+* Added golang generator which supersedes go generator (thanks polderudo)
+* Fixed empty if-body in python
+* Added javascript example (thanks 0xCCD)
+* Added 2022 PAP (thanks 0xCCD)
+
 ## 0.5.4
 * Added php BigDecimal fixes (thanks tburschka)
 
@@ -7,7 +13,7 @@
 * Added python3.9 ast module compatiblity
 
 ## 0.5.2
-* Added resources for year 2020 (thanks 0xCCD)
+* Added resources for year 2021 (thanks 0xCCD)
 
 ## 0.5.1
 * Added fix for double types in Go (thanks knipknap)

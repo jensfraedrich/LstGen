@@ -146,7 +146,11 @@ class PythonGenerator(BaseGenerator):
             elif isinstance(part, ElseStmt):
                 self._write_else(part)
             elif isinstance(part, ThenStmt):
-                self._write_stmt_body(part)
+                # avoid empty if-statement body
+                if part and part.body:
+                    self._write_stmt_body(part)
+                else:
+                    self.writer.writeln('pass')
 
     def _write_if(self, stmt, stmt_count=False):
         converted = self._convert_if(stmt.condition, stmt_count)

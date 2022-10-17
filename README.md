@@ -5,12 +5,12 @@ unter https://www.bmf-steuerrechner.de zur Verfügung stehen, validen Code
 generieren, mit dem man ohne weitere Abhängigkeiten (wie z.B. einem externen
 Service) die Lohnsteuer berechnen kann.
 
-Zur Zeit werden vier Sprachen unterstützt:
+Folgende Programmiersprachen werden zur Zeit unterstützt:
 * PHP
 * Python
 * Java
 * Javascript
-* Go (Golang)
+* Go
 
 ## Installation
 * Mit `pip` oder `easy_install` aus PyPI:
@@ -188,4 +188,25 @@ go mod init yourpackage.com
 go mod download
 go build -o cmd/start cmd/main.go
 cmd/start
+```
+
+## Beispiel 4: Erzeugen einer Javascript Funktion zur Berechnung der Lohnsteuer für das Jahr 2022
+
+```lstgen -p 2022_1 -l javascript --class-name Lohnsteuer2022 --outfile Lohnsteuer2022.js```
+
+Das generierte Node Module erfordert eine BigDecimal Implementierung.
+
+Dafür kann man zum Beispiel folgendes npm installieren: `npm install bigdecimal`
+
+Um eine ordungsgemäße Nutzung der Klasse zu garantieren, muss man das BigDecimal des NPM wie folgt neu definieren
+
+```
+const big = require('../node_modules/bigdecimal')
+const BigDecimal = big.BigDecimal;
+```
+
+Anschliessend kann man das Modul wie folgt nutzen:
+
+```
+const Lohnsteuer2022 = require('Lohnsteuer2022');
 ```
